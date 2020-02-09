@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ToDolist</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ToDo一覧 -->
+    <div class="todolist">
+      <div class="header">
+        <h4>ToDo一覧</h4>
+        <p>メモ</p>
+        <nav class="nav"><a href="#new-todo">新規追加</a></nav>
+      </div>
+      <dl id="list"></dl>
+    </div>
+
+    <!-- 新規追加 -->
+    <section id="new-todo">
+      <div class="register-box">
+        <h3 class="register-header">ToDoを追加</h3>
+        <dl>
+          <dt class="title">
+            <p>ToDo名</p>
+          </dt>
+          <dd class="item">
+            <input type="text" id="name" />
+          </dd>
+          <dt class="title">
+            <p>メモ</p>
+          </dt>
+          <dd class="item">
+            <textarea name="" id="memo" cols="30" rows="5"></textarea>
+          </dd>
+        </dl>
+        <div>
+          <button id="register">追加</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- jquery の読み込み-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- firebaseの読み込み -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBG0n4wUQBaGtQFr3j3_DWH_qSTaE-B72Q",
+        authDomain: "todolist-ef6c6.firebaseapp.com",
+        databaseURL: "https://todolist-ef6c6.firebaseio.com",
+        projectId: "todolist-ef6c6",
+        storageBucket: "todolist-ef6c6.appspot.com",
+        messagingSenderId: "549140660124",
+        appId: "1:549140660124:web:6a2be0e4ed9fbe6df69259"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      const newPostRef = firebase.database().ref();
+    </script>
+    <!-- jsの読み込み -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
